@@ -11,10 +11,8 @@ namespace SistemaNutricionista.Models
     public class ClienteMedidas
     {
         [Key]
-        public int ID { get; set; }
-
-        [ForeignKey("ClienteID")]
-        public int ClienteID { get; set; }
+        [ForeignKey("Cliente")]
+        public int MedidasId { get; set; }
 
         public int Altura { get; set; }
         public decimal Peso { get; set; }
@@ -24,6 +22,8 @@ namespace SistemaNutricionista.Models
         public decimal PorcentagemGordura { get; set; }
         public decimal PorcentagemGorduraViceral { get; set; }
         public int Coxa { get; set; }
+
+        public virtual Cliente Cliente { get; set; }
 
 
     }

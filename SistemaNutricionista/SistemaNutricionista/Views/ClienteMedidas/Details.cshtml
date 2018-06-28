@@ -1,0 +1,90 @@
+﻿@model SistemaNutricionista.Models.ClienteMedidas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClienteMedidas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Altura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Altura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cintura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cintura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Abdomen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Abdomen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PorcentagemGordura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PorcentagemGordura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PorcentagemGorduraViceral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PorcentagemGorduraViceral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coxa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coxa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MedidasId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

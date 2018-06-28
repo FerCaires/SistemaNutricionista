@@ -10,7 +10,7 @@ namespace SistemaNutricionista.Models
     [Table("Clientes")]
     public class Cliente
     {
-        [Key]
+       
         public int ID { get; set; }
         public string Nome { get; set; }
         public int  Idade { get; set; }
@@ -18,5 +18,6 @@ namespace SistemaNutricionista.Models
         public string Endereco { get; set; }
         public string Telefone { get; set; }
 
+        public virtual ClienteMedidas Medidas { get; set; }
     }
 }
