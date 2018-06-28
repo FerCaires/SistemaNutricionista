@@ -11,112 +11,109 @@ using SistemaNutricionista.Models;
 
 namespace SistemaNutricionista.Controllers
 {
-    public class ClienteMedidasController : Controller
+    public class PlanoAlimentarsController : Controller
     {
         private SNDataContext db = new SNDataContext();
 
-        // GET: ClienteMedidas
+        // GET: PlanoAlimentars
         public ActionResult Index()
         {
-            var daoMedidas = db.daoMedidas.Include(c => c.Cliente);
-            return View(daoMedidas.ToList());
+            
+            return View(db.daoPlanoAlimentar.ToList());
         }
 
-        // GET: ClienteMedidas/Details/5
+        // GET: PlanoAlimentars/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClienteMedidas clienteMedidas = db.daoMedidas.Find(id);
-            if (clienteMedidas == null)
+            PlanoAlimentar planoAlimentar = db.daoPlanoAlimentar.Find(id);
+            if (planoAlimentar == null)
             {
                 return HttpNotFound();
             }
-            return View(clienteMedidas);
+            return View(planoAlimentar);
         }
 
-        // GET: ClienteMedidas/Create
+        // GET: PlanoAlimentars/Create
         public ActionResult Create()
         {
-            ViewBag.MedidasId = new SelectList(db.daoMedidas, "ID", "Nome");
+            ViewBag.Clientes = new SelectList(db.daoCliente, "ID", "Nome");
             return View();
         }
 
-        // POST: ClienteMedidas/Create
+        // POST: PlanoAlimentars/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MedidasId,Altura,Peso,IMC,Cintura,Abdomen,PorcentagemGordura,PorcentagemGorduraViceral,Coxa")] ClienteMedidas clienteMedidas)
+        public ActionResult Create([Bind(Include = "ID,ClienteID,Desjejum,Colacao,Almoco,LancheTarde,LancheTardeDois,Jantar,Ceia,CeiaDois,DataRegistro")] PlanoAlimentar planoAlimentar)
         {
             if (ModelState.IsValid)
             {
-                db.daoMedidas.Add(clienteMedidas);
+                db.daoPlanoAlimentar.Add(planoAlimentar);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MedidasId = new SelectList(db.daoCliente, "ID", "Nome", clienteMedidas.MedidasId);
-            return View(clienteMedidas);
+            return View(planoAlimentar);
         }
 
-        // GET: ClienteMedidas/Edit/5
+        // GET: PlanoAlimentars/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClienteMedidas clienteMedidas = db.daoMedidas.Find(id);
-            if (clienteMedidas == null)
+            PlanoAlimentar planoAlimentar = db.daoPlanoAlimentar.Find(id);
+            if (planoAlimentar == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MedidasId = new SelectList(db.daoCliente, "ID", "Nome", clienteMedidas.MedidasId);
-            return View(clienteMedidas);
+            return View(planoAlimentar);
         }
 
-        // POST: ClienteMedidas/Edit/5
+        // POST: PlanoAlimentars/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MedidasId,Altura,Peso,IMC,Cintura,Abdomen,PorcentagemGordura,PorcentagemGorduraViceral,Coxa")] ClienteMedidas clienteMedidas)
+        public ActionResult Edit([Bind(Include = "ID,ClienteID,Desjejum,Colacao,Almoco,LancheTarde,LancheTardeDois,Jantar,Ceia,CeiaDois,DataRegistro")] PlanoAlimentar planoAlimentar)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(clienteMedidas).State = EntityState.Modified;
+                db.Entry(planoAlimentar).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MedidasId = new SelectList(db.daoCliente, "ID", "Nome", clienteMedidas.MedidasId);
-            return View(clienteMedidas);
+            return View(planoAlimentar);
         }
 
-        // GET: ClienteMedidas/Delete/5
+        // GET: PlanoAlimentars/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ClienteMedidas clienteMedidas = db.daoMedidas.Find(id);
-            if (clienteMedidas == null)
+            PlanoAlimentar planoAlimentar = db.daoPlanoAlimentar.Find(id);
+            if (planoAlimentar == null)
             {
                 return HttpNotFound();
             }
-            return View(clienteMedidas);
+            return View(planoAlimentar);
         }
 
-        // POST: ClienteMedidas/Delete/5
+        // POST: PlanoAlimentars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ClienteMedidas clienteMedidas = db.daoMedidas.Find(id);
-            db.daoMedidas.Remove(clienteMedidas);
+            PlanoAlimentar planoAlimentar = db.daoPlanoAlimentar.Find(id);
+            db.daoPlanoAlimentar.Remove(planoAlimentar);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

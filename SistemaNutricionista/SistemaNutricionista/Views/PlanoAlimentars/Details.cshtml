@@ -1,0 +1,98 @@
+﻿@model SistemaNutricionista.Models.PlanoAlimentar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlanoAlimentar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desjejum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desjejum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Almoco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Almoco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LancheTarde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LancheTarde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LancheTardeDois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LancheTardeDois)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jantar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jantar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ceia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ceia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CeiaDois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CeiaDois)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRegistro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

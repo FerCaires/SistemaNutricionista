@@ -200,21 +200,33 @@
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlanoAlimentarsController.cs" />
     <Compile Include="DataContext\SNDataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806280636153_InitialCreate.cs" />
+    <Compile Include="Migrations\201806280636153_InitialCreate.Designer.cs">
+      <DependentUpon>201806280636153_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806282134256_Teste.cs" />
+    <Compile Include="Migrations\201806282134256_Teste.Designer.cs">
+      <DependentUpon>201806282134256_Teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteMedidas.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PlanoAlimentar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Teste.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -280,6 +292,11 @@
     <Content Include="Views\ClienteMedidas\Details.cshtml" />
     <Content Include="Views\ClienteMedidas\Edit.cshtml" />
     <Content Include="Views\ClienteMedidas\Index.cshtml" />
+    <Content Include="Views\PlanoAlimentars\Create.cshtml" />
+    <Content Include="Views\PlanoAlimentars\Delete.cshtml" />
+    <Content Include="Views\PlanoAlimentars\Details.cshtml" />
+    <Content Include="Views\PlanoAlimentars\Edit.cshtml" />
+    <Content Include="Views\PlanoAlimentars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +308,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806280636153_InitialCreate.resx">
+      <DependentUpon>201806280636153_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806282134256_Teste.resx">
+      <DependentUpon>201806282134256_Teste.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

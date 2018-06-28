@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SistemaNutricionista.Models.PlanoAlimentar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Cliente
+        </th>
+        <th>
+            Desjejum
+        </th>
+        <th>
+            Colação
+        </th>
+        <th>
+            Almoço
+        </th>
+        <th>
+            Lanche da Tarde
+        </th>
+        <th>
+            Lanche da Tarde 2
+        </th>
+        <th>
+            Jantar
+        </th>
+        <th>
+            Ceia
+        </th>
+        <th>
+            Ceia 2
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desjejum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Almoco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LancheTarde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LancheTardeDois)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jantar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ceia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CeiaDois)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRegistro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -11,5 +11,6 @@ namespace SistemaNutricionista.DataContext
     {
         public DbSet<Cliente> daoCliente { get; set; }
         public DbSet<ClienteMedidas> daoMedidas { get; set; }
+        public DbSet<PlanoAlimentar> daoPlanoAlimentar { get; set; }
     }
 }
